@@ -48,4 +48,6 @@ export default routerSlice.reducer;
  * @param {*} state the redux state
  * @returns {String} returns the page name
  */
-export const selectPage = (state) => state;
+export const selectPage = (state) => {
+    return state.router
+};
