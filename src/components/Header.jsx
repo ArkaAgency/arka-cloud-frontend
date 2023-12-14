@@ -1,4 +1,4 @@
-import icon from "../assets/icon.png";
+import icon from "../assets/Arka.png";
 import mailIcon from "../assets/mail.png";
 import calendarIcon from "../assets/calendar.png";
 import driveIcon from "../assets/drive.png";
