@@ -1,13 +1,13 @@
 import Home from "../views/Home";
 
 const Routes = {
-    Home: 'Home'
+    home: 'home'
 };
 
 export default Routes;
 
 export const RouteComponent = (route) => {
     return {
-        [Routes.Home]: <Home />
+        [Routes.home]: <Home />
     }[route];
 }
