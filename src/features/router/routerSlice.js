@@ -1,6 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Routes from "../../constants/Routes.constants";
 
+// Initial State
+
+const initialState = {
+    page: 'home',
+    args: []
+};
+
 // Feature functions
 
 /**
@@ -30,28 +37,36 @@ export const updateRouteInURL = (route) => {
     window.history.replaceState(route.page, '', `${window.location.origin}/${route.page}/${route.args.join('/')}`)
 }
 
-// Initial State
-
-const initialState = getRouteFromURL() || {
-    page: 'Home',
-    args: []
-};
-
 // Slice
 
 export const routerSlice = createSlice({
-    name: 'page',
-    initialState,
+    name: 'router',
+    initialState: getRouteFromURL() || initialState,
     reducers: {
         setRoute: (state, action) => {
             const newRoute = action.payload;
             state = newRoute;
             updateRouteInURL(newRoute);
         },
+        setRouteString: (state, action) => {
+            const routeString = action.payload;
+            const routeArgs = routeString.split('/');
+            const routePage = routeArgs.shift();
+
+            const newRoute = {
+                page: routePage,
+                args: routeArgs
+            };
+            state = newRoute;
+
+            updateRouteInURL(newRoute);
+        }
     }
 })
 
 export default routerSlice.reducer;
+
+export const { setRoute, setRouteString } = routerSlice.actions; 
 
 // Selectors
 
