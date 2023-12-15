@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Routes from "../../constants/Routes.constants";
+import Routes, {RouteComponent} from "../../constants/Routes.constants";
 
 // Initial State
 
@@ -20,13 +20,18 @@ export const getRouteFromURL = () => {
 
     const parsedURL = windowURL.replace(`${origin}/`, '').replace(origin, '').replace(/[^a-zA-Z0-9/]/g, '');
     const routeArgs = parsedURL.split('/');
-    const routeName = routeArgs.shift();
+    let routeName = routeArgs.shift();
 
+    if (routeName.length === 0)
+        routeName = Routes.home;
 
     return Routes[routeName] ? {
         page: routeName,
         args: routeArgs
-    } : initialState;
+    } : {
+        page: Routes.notfound,
+        args: []
+    };
 }
 
 /**
