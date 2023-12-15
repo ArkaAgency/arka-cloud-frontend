@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 // Initial State
 
-const initialState = 'english';
+const initialState = localStorage.getItem('language') || 'english';
 
 // Feature functions
 
@@ -14,6 +14,7 @@ export const routerSlice = createSlice({
     reducers: {
         setLanguage: (state, action) => {
             state = action.payload;
+            localStorage.setItem('language', state);
             return action.payload;
         }
     }
