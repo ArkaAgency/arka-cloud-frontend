@@ -15,7 +15,7 @@ export default class Home extends Component {
     render() {
         return <>
             <BasePageModel>
-                <article className="h-[85vh] w-screen flex items-center justify-center">
+                <article className="h-[85vh] w-full flex items-center justify-center">
                     <section className={'w-full max-w-2xl'}>
                         <p className={'text-center text-xl font-medium mb-1'}>Arka Cloud is self-hosted privacy for everyone</p>
                         <h1 className={'text-5xl font-bold text-center mb-6'}>
@@ -72,7 +72,7 @@ export default class Home extends Component {
                             <p className={'mb-6 font-semibold text-slate-600 text-base'}>
                                 Our encrypted services help you fight for a better internet that is secure and private by default.
                             </p>
-                            <a href="/signup" className="group py-3 pr-8 bg-indigo-500 text-slate-100 text-xl font-semibold rounded-3xl transition-all duration-200 hover:pr-11 hover:drop-shadow-xl flex items-center justify-center w-fit">
+                            <a href="/mail/pricing" className="group py-3 pr-8 bg-indigo-500 text-slate-100 text-xl font-semibold rounded-3xl transition-all duration-200 hover:pr-11 hover:drop-shadow-xl flex items-center justify-center w-fit">
                                 <span className={'pl-8 group-hover:pl-5 transition-all ease-in-out duration-200'}>
                                     Create a free account
                                 </span>
