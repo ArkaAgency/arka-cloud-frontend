@@ -87,7 +87,7 @@ export default function Header() {
                         </a>
                     </li>
                     <li className="inline-block">
-                        <a href="/signup" className="group py-2 px-4 bg-indigo-500 text-slate-100 text-sm font-semibold rounded-lg transition-all duration-200 hover:drop-shadow-xl hover:pr-8">
+                        <a href="/mail/pricing" className="group py-2 px-4 bg-indigo-500 text-slate-100 text-sm font-semibold rounded-lg transition-all duration-200 hover:drop-shadow-xl hover:pr-8">
                             {t`Create a free account`}
                             <span className="pacity-0 absolute right-3 top-2 group-hover:opacity-100 transition-all ease-in-out duration-200">
                                 <BsChevronRight size={16} />
