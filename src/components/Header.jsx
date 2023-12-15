@@ -4,6 +4,7 @@ import calendarIcon from "../assets/calendar.png";
 import driveIcon from "../assets/drive.png";
 import vpnIcon from "../assets/vpn.png";
 import { BsChevronRight, BsChevronDown } from "react-icons/bs";
+import t from "../utils/i18n";
 
 export default function Header() {
     return <>
@@ -15,7 +16,7 @@ export default function Header() {
                 <ul>
                     <li className="group relative">
                         <a href="#!" className="font-medium text-base flex items-center">
-                            Products 
+                            {t`Products`}
                             <span className="ml-1"><BsChevronDown /></span>
                         </a>
                         <div className="hidden group-focus-within:block absolute top-full left-0 bg-white border border-slate-200 drop-shadow-xl p-5 mt-2 rounded-lg w-[1000px]">
@@ -29,7 +30,7 @@ export default function Header() {
                                         </div>
                                         <div>
                                             <h2 className="text-2xl font-medium">Arka <span className="text-purple-600">Mail</span></h2>
-                                            <p className="text-base font-normal text-slate-500">Encrypted email that's private by default.</p>
+                                            <p className="text-base font-normal text-slate-500">{t`Encrypted email that's private by default.`}</p>
                                         </div>
                                     </a>
                                 </li>
@@ -42,7 +43,7 @@ export default function Header() {
                                         </div>
                                         <div>
                                             <h2 className="text-2xl font-medium">Arka <span className="text-purple-600">Calendar</span></h2>
-                                            <p className="text-base font-normal text-slate-500">A Calendar is a record of your life. Keep it safe.</p>
+                                            <p className="text-base font-normal text-slate-500">{t`A Calendar is a record of your life. Keep it safe.`}</p>
                                         </div>
                                     </a>
                                 </li>
@@ -55,7 +56,7 @@ export default function Header() {
                                         </div>
                                         <div>
                                             <h2 className="text-2xl font-medium">Arka <span className="text-purple-600">Drive</span></h2>
-                                            <p className="text-base font-normal text-slate-500">Secured cloud storage that gives you control of your data.</p>
+                                            <p className="text-base font-normal text-slate-500">{t`Secured cloud storage that gives you control of your data.`}</p>
                                         </div>
                                     </a>
                                 </li>
@@ -68,7 +69,7 @@ export default function Header() {
                                         </div>
                                         <div>
                                             <h2 className="text-2xl font-medium">Arka <span className="text-purple-600">VPN</span></h2>
-                                            <p className="text-base font-normal text-slate-500">Your gateway to online freedom.</p>
+                                            <p className="text-base font-normal text-slate-500">{t`Your gateway to online freedom.`}</p>
                                         </div>    
                                     </a>
                                 </li>
@@ -79,7 +80,7 @@ export default function Header() {
                 <ul>
                     <li className="inline-block mr-4">
                         <a href="/signin" className="group relative py-2 px-4 text-indigo-500 text-sm font-semibold transition-all duration-200 ease-in-out rounded-lg hover:bg-indigo-500 hover:text-slate-100 hover:drop-shadow-xl hover:pr-8">
-                            Sign In
+                            {t`Sign In`}
                             <span className="opacity-0 absolute right-3 top-2 group-hover:opacity-100 transition-all ease-in-out duration-200">
                                 <BsChevronRight size={16} />
                             </span>
@@ -87,7 +88,7 @@ export default function Header() {
                     </li>
                     <li className="inline-block">
                         <a href="/signup" className="group py-2 px-4 bg-indigo-500 text-slate-100 text-sm font-semibold rounded-lg transition-all duration-200 hover:drop-shadow-xl hover:pr-8">
-                            Create a free account
+                            {t`Create a free account`}
                             <span className="pacity-0 absolute right-3 top-2 group-hover:opacity-100 transition-all ease-in-out duration-200">
                                 <BsChevronRight size={16} />
                             </span>
