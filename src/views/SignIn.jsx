@@ -81,7 +81,7 @@ export default class SignIn extends Component {
                             <p className={'text-center text-base mb-4'}>
                                 Arka Cloud. Local cloud by default.
                             </p>
-                            <p className={'text-center text-sm'}>
+                            <p className={'text-center text-base'}>
                                 <a href="/legal/terms" className={'text-violet-600 underline'}>Terms</a> | <a href="/legal/privacy" className={'text-violet-600 underline'}>Privacy policy</a> | Version {packageJson.version}
                             </p>
                         </section>
