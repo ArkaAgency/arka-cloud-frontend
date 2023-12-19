@@ -5,8 +5,8 @@ import calendarIcon from "../assets/calendar.png";
 import driveIcon from "../assets/drive.png";
 import vpnIcon from "../assets/vpn.png";
 import {LanguageDropdownAlt} from "../components/LanguageDropdown";
-import { GoPersonFill, GoKey } from "react-icons/go";
 import packageJson from "../../package.json";
+import t from "../utils/i18n";
 
 export default class SignUp extends Component {
     render() {
@@ -31,10 +31,10 @@ export default class SignUp extends Component {
                         </ul>
                         <ul className='w-full grid grid-cols-2'>
                             <li className={'flex items-center justify-center'}>
-                                <p className={'text-xs font-bold text-slate-950'}>Account setup</p>
+                                <p className={'text-xs font-bold text-slate-950 text-center'}>{t`Account setup`}</p>
                             </li>
                             <li className={'flex items-center justify-center'}>
-                                <p className={'text-xs font-normal text-slate-950 opacity-50'}>Verification</p>
+                                <p className={'text-xs font-normal text-slate-950 opacity-50 text-center'}>{t`Verification`}</p>
                             </li>
                         </ul>
                     </div>
@@ -43,13 +43,13 @@ export default class SignUp extends Component {
                 <main className={'flex items-center justify-center w-full'}>
                     <article className={'w-[18.5%]'}>
                         <section className={'w-full bg-white rounded-2xl p-8 py-10 drop-shadow-2xl mb-10'}>
-                            <h1 className={'text-3xl font-bold mb-2'}>Create your Arka Account</h1>
-                            <p className={'text-slate-600 text-base font-normal mb-6'}>One account. All Arka services.</p>
+                            <h1 className={'text-3xl font-bold mb-2'}>{t`Create your Arka Account`}</h1>
+                            <p className={'text-slate-600 text-base font-normal mb-6'}>{t`One account. All Arka services.`}</p>
                             <SignUpForm />
                             <div className={'flex w-full items-center justify-center flex-wrap'}>
-                                <p className={'text-center text-sm text-slate-700'}>Already have an account? <a href="/signin" className={"text-indigo-600 underline"}>Sign in</a></p>
+                                <p className={'text-center text-sm text-slate-700'}>{t`Already have an account?`} <a href="/signin" className={"text-indigo-600 underline"}>{t`Sign in`}</a></p>
                                 <div className={'w-full h-[1px] bg-gray-300 my-5'}></div>
-                                <p className={'text-center text-sm text-slate-600 w-60'}>By creating a Arka account, you agree to our <a href="/legal/terms" className={"text-indigo-600 underline"}>terms and conditions</a></p>
+                                <p className={'text-center text-sm text-slate-600 w-60'}>{t`By creating a Arka account, you agree to our`} <a href="/legal/terms" className={"text-indigo-600 underline"}>{t`terms and conditions`}</a></p>
                             </div>
                         </section>
                         <section>
@@ -71,7 +71,7 @@ export default class SignUp extends Component {
                                 Arka Cloud. Local cloud by default.
                             </p>
                             <p className={'text-center text-base'}>
-                                <a href="/legal/terms" className={'text-violet-600 underline'}>Terms</a> | <a href="/legal/privacy" className={'text-violet-600 underline'}>Privacy policy</a> | Version {packageJson.version}
+                                <a href="/legal/terms" className={'text-violet-600 underline'}>{t`Terms`}</a> | <a href="/legal/privacy" className={'text-violet-600 underline'}>{t`Privacy policy`}</a> | Version {packageJson.version}
                             </p>
                         </section>
                     </article>
@@ -134,35 +134,35 @@ export class SignUpForm extends Component {
         if (useEmail) {
             const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
             if (email.length === 0) {
-                finalErrors.email = 'This field is required';
+                finalErrors.email = t`This field is required`;
             } else if (!emailRegexp.test(email)) {
-                finalErrors.email = 'Email is not valid';
+                finalErrors.email = t`Email is not valid`;
             }
         }
         // Check for username field
         else {
             const usernameRegexp = /^[A-Za-z0-9]+$/
             if (username.length === 0) {
-                finalErrors.username = 'This field is required';
+                finalErrors.username = t`This field is required`;
             } else if (username.length < 6) {
-                finalErrors.username = 'Username must contain at least 6 characters';
+                finalErrors.username = t`Username must contain at least 6 characters`;
             } else if (!usernameRegexp.test(username)) {
-                finalErrors.username = 'Username should only contains letters and numbers';
+                finalErrors.username = t`Username should only contains letters and numbers`;
             }
         }
 
         // Check for password field
         if (password.length === 0) {
-            finalErrors.password = 'This field is required';
+            finalErrors.password = t`This field is required`;
         } else if (password.length < 8) {
-            finalErrors.password = 'Password must contain at least 8 characters';
+            finalErrors.password = t`Password must contain at least 8 characters`;
         }
 
         // Check for password repeat field
         if (passwordRepeat.length === 0) {
-            finalErrors.passwordRepeat = 'This field is required';
+            finalErrors.passwordRepeat = t`This field is required`;
         } else if (password !== passwordRepeat) {
-            finalErrors.passwordRepeat = 'Passwords do not match';
+            finalErrors.passwordRepeat = t`Passwords do not match`;
         }
 
         // Update state
@@ -217,13 +217,13 @@ export class SignUpForm extends Component {
             <form className={'w-full mb-4'}>
                 {useEmail ? <div className={'mb-5 w-full'}>
                     <label htmlFor="email" className={'font-semibold text-sm text-slate-900 block mb-1'}>
-                        Email
+                        {t`Email`}
                     </label>
                     <input value={fields.email} onChange={this.onChange} name={'email'} type="email" id={'email'} className={'w-full outline-0 border border-slate-400 rounded-lg p-2 px-3 text-slate-600 text-sm focus:border-violet-600 mb-1 ' + (errors.email ? ' !border-red-600' : '')}/>
                     <FieldErrorMessage>{errors.email}</FieldErrorMessage>
                 </div> : <div className={'mb-5 w-full'}>
                     <label htmlFor="username" className={'font-semibold text-sm text-slate-900 block mb-1'}>
-                        Username
+                        {t`Username`}
                     </label>
                     <div className={'w-full relative mb-1'}>
                         <input value={fields.username} onChange={this.onChange} name={'username'} type="text" id={'username'} className={'w-full outline-0 border border-slate-400 rounded-lg p-2 px-3 pr-32 text-slate-600 text-sm focus:border-violet-600' + (errors.username ? ' !border-red-600' : '')}/>
@@ -234,22 +234,22 @@ export class SignUpForm extends Component {
                     <FieldErrorMessage>{errors.username}</FieldErrorMessage>
                 </div>}
                 <button type={'button'} onClick={this.toggleEmail} className={'flex items-center justify-center w-full text-sm text-indigo-600 underline cursor-pointer mb-4'}>
-                    {useEmail ? 'Get a new encrypted email address' : 'Use your current email instead'}
+                    {useEmail ? t`Get a new encrypted email address` : t`Use your current email instead`}
                 </button>
                 <div className={'mb-6 w-full'}>
                     <label htmlFor="password" className={'font-semibold text-sm text-slate-900 block mb-1'}>
-                        Password
+                        {t`Password`}
                     </label>
                     <input value={fields.password} onChange={this.onChange} type="password" id={'password'} className={'w-full outline-0 border border-slate-400 rounded-lg p-2 px-3 text-slate-600 text-sm focus:border-violet-600 mb-1' + (errors.password ? ' !border-red-600' : '')}/>
                     <FieldErrorMessage>{errors.password}</FieldErrorMessage>
                 </div>
                 <div className={'mb-10 w-full'}>
                     <label htmlFor="passwordRepeat" className={'font-semibold text-sm text-slate-900 block mb-1'}>
-                        Repeat password
+                        {t`Repeat password`}
                     </label>
                     <input value={fields.passwordRepeat} onChange={this.onChange} type="password" id={'passwordRepeat'} className={'w-full outline-0 border border-slate-400 rounded-lg p-2 px-3 text-slate-600 text-sm focus:border-violet-600 mb-1' + (errors.passwordRepeat ? ' !border-red-600' : '')}/>
                     <FieldErrorMessage>{errors.passwordRepeat}</FieldErrorMessage>                </div>
-                <button type={'button'} onClick={this.submit} className={'rounded-xl bg-indigo-600 font-medium text-base text-center w-full text-white p-3 hover:bg-indigo-700'}>Create account</button>
+                <button type={'button'} onClick={this.submit} className={'rounded-xl bg-indigo-600 font-medium text-base text-center w-full text-white p-3 hover:bg-indigo-700'}>{t`Create account`}</button>
             </form>
         </>;
     }
