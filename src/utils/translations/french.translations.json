@@ -78,5 +78,17 @@
   "Free forever": "Gratuit pour toujours",
   "We believe that privacy is a human right, and that's why Arka Cloud services are always available for free and our encryption technology is free software": "Nous pensons que le respect de la vie privée est un droit fondamental. C'est pourquoi les services Proton sont toujours disponibles gratuitement et notre technologie de chiffrement est un logiciel libre.",
   "Arka Cloud has no ads and does not sell your data. You can support the service by upgrading to a paid account with more features.": "Arka Cloud offre des services sans publicité et ne vend pas vos données. Vous pouvez nous soutenir en passant à un abonnement payant qui offre plus de fonctionnalités.",
-  "Get a free Arka account": "Créez un compte Arka gratuitement"
+  "Get a free Arka account": "Créez un compte Arka gratuitement",
+  "Enter your Arka Account details.": "Saisissez les identifiants de votre compte Arka.",
+  "Email or username": "Nom d'utilisateur ou adresse email",
+  "Password": "Mot de passe",
+  "Keep me signed in": "Se souvenir de moi",
+  "Not your device? Use a private browsing window to sign in and close it when done.": "Ce n'est pas votre appareil ? Utilisez une fenêtre de navigation privée pour vous connecter et fermez-la lorsque vous avez terminé.",
+  "Sign in": "Se connecter",
+  "Create account": "Créer un compte",
+  "Trouble signing in?": "Un problème pour vous connecter ?",
+  "Reset password": "Mot de passe oublié ?",
+  "Forgot username?": "Nom d'utilisateur oublié ?",
+  "Terms": "Conditions d'utilisations",
+  "Privacy policy": "Politique de confidentialité"
 }

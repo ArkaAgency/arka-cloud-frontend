@@ -7,6 +7,7 @@ import vpnIcon from "../assets/vpn.png";
 import {LanguageDropdownAlt} from "../components/LanguageDropdown";
 import { GoPersonFill, GoKey } from "react-icons/go";
 import packageJson from "../../package.json";
+import t from "../utils/i18n";
 
 export default class SignIn extends Component {
     render() {
@@ -21,18 +22,18 @@ export default class SignIn extends Component {
                 <main className={'flex items-center justify-center w-full'}>
                     <article className={'w-[18.5%]'}>
                         <section className={'w-full bg-white rounded-2xl p-8 py-10 drop-shadow-2xl mb-10'}>
-                            <h1 className={'text-2xl font-bold mb-2'}>Sign In</h1>
-                            <p className={'text-slate-600 text-sm font-normal mb-4'}>Enter your Arka Account details</p>
+                            <h1 className={'text-2xl font-bold mb-2'}>{t`Sign In`}</h1>
+                            <p className={'text-slate-600 text-sm font-normal mb-4'}>{t`Enter your Arka Account details.`}</p>
                             <form className={'w-full mb-4'}>
                                 <div className={'mb-5 w-full'}>
                                     <label htmlFor="username" className={'font-semibold text-sm text-slate-900 block mb-1'}>
-                                        Email or username
+                                        {t`Email or username`}
                                     </label>
                                     <input type="text" id={'username'} className={'w-full outline-0 border border-slate-400 rounded-lg p-2 px-3 text-slate-600 text-sm focus:border-violet-600'}/>
                                 </div>
                                 <div className={'mb-5 w-full'}>
                                     <label htmlFor="password" className={'font-semibold text-sm text-slate-900 block mb-1'}>
-                                        Password
+                                        {t`Password`}
                                     </label>
                                     <input type="password" id={'password'} className={'w-full outline-0 border border-slate-400 rounded-lg p-2 px-3 text-slate-600 text-sm focus:border-violet-600'}/>
                                 </div>
@@ -41,23 +42,23 @@ export default class SignIn extends Component {
                                         <input id="staySignedIn" aria-describedby="staySignedIn-text" type="checkbox" value="" className="w-4 h-4 accent-indigo-500 rounded-full cursor-pointer" />
                                     </div>
                                     <div className="ms-2 text-sm">
-                                        <label htmlFor="staySignedIn" className="font-normal text-slate-700 cursor-pointer">Keep me signed in</label>
-                                        <p id="staySignedIn-text" className="text-sm font-normal text-slate-500">Not your device? Use a private browsing window to sign in and close it when done.</p>
+                                        <label htmlFor="staySignedIn" className="font-normal text-slate-700 cursor-pointer">{t`Keep me signed in`}</label>
+                                        <p id="staySignedIn-text" className="text-sm font-normal text-slate-500">{t`Not your device? Use a private browsing window to sign in and close it when done.`}</p>
                                     </div>
                                 </div>
-                                <button className={'rounded-xl bg-indigo-600 font-medium text-base text-center w-full text-white p-3 hover:bg-indigo-700'}>Sign in</button>
+                                <button className={'rounded-xl bg-indigo-600 font-medium text-base text-center w-full text-white p-3 hover:bg-indigo-700'}>{t`Sign in`}</button>
                             </form>
                             <div className={'flex w-full items-center justify-center flex-wrap'}>
-                                <p className={'text-center text-sm text-slate-700'}>New to Arka ? <a href="/signup" className={"text-indigo-600 underline"}>Create account</a></p>
+                                <p className={'text-center text-sm text-slate-700'}>New to Arka ? <a href="/signup" className={"text-indigo-600 underline"}>{t`Create account`}</a></p>
                                 <div className={'w-full h-[1px] bg-gray-300 my-5'}></div>
                                 <button className={'group text-sm text-indigo-600 underline cursor-pointer relative'}>
-                                    Trouble signing in?
+                                    {t`Trouble signing in?`}
                                     <div className="hidden absolute group-focus-within:block border border-slate-200 top-full left-1/2 -translate-x-1/2 bg-white py-1 rounded-lg mt-2 drop-shadow-xl w-44">
                                         <a href={'/resetpassword'} className={'flex items-center justify-center w-full text-slate-800 py-2 hover:bg-slate-100'}>
-                                            <GoKey />&nbsp;&nbsp;&nbsp;Reset password
+                                            <GoKey />&nbsp;&nbsp;&nbsp;{t`Reset password`}
                                         </a>
                                         <a href={'/forgotusername'} className={'flex items-center justify-center w-full text-slate-800 py-2 hover:bg-slate-100'}>
-                                            <GoPersonFill />&nbsp;&nbsp;&nbsp;Forgot username?
+                                            <GoPersonFill />&nbsp;&nbsp;&nbsp;{t`Forgot username?`}
                                         </a>
                                     </div>
                                 </button>
@@ -82,7 +83,7 @@ export default class SignIn extends Component {
                                 Arka Cloud. Local cloud by default.
                             </p>
                             <p className={'text-center text-base'}>
-                                <a href="/legal/terms" className={'text-violet-600 underline'}>Terms</a> | <a href="/legal/privacy" className={'text-violet-600 underline'}>Privacy policy</a> | Version {packageJson.version}
+                                <a href="/legal/terms" className={'text-violet-600 underline'}>{t`Terms`}</a> | <a href="/legal/privacy" className={'text-violet-600 underline'}>{t`Privacy policy`}</a> | Version {packageJson.version}
                             </p>
                         </section>
                     </article>
