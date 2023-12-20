@@ -19,7 +19,7 @@ export default function Header() {
                             {t`Products`}
                             <span className="ml-1"><BsChevronDown /></span>
                         </a>
-                        <div className="hidden group-focus-within:block absolute top-full left-0 bg-white border border-slate-200 drop-shadow-xl p-5 mt-2 rounded-lg w-[1000px]">
+                        <div className="hidden z-10 group-focus-within:block absolute top-full left-0 bg-white border border-slate-200 drop-shadow-xl p-5 mt-2 rounded-lg w-[1000px]">
                             <ul className="grid grid-cols-3 w-full">
                                 <li>
                                     <a href="/mail" className="p-3 py-4 flex flex-row hover:bg-slate-100 rounded-lg cursor-pointer w-full">
