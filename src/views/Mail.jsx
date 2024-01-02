@@ -1,7 +1,11 @@
 import {useSelector} from "react-redux";
 import {selectRouteArgs} from "../features/router/routerSlice";
 import BasePageModel from "../components/BasePageModel";
+import t from "../utils/i18n";
 import mailIcon from "../assets/mail.png";
+import mOverviewHero from "../assets/mail_-Hero-desktop-mail.png";
+import mOverviewEncryption from "../assets/mail_end-to-end-encryption.png";
+import {BsChevronRight} from "react-icons/bs";
 
 export default function Mail () {
     const subpage = useSelector(selectRouteArgs)[0] || 'overview';
@@ -13,7 +17,7 @@ export default function Mail () {
     }[subpage] || <MailOverview />;
 
     return <BasePageModel>
-        <div className={'container mx-auto relative h-6'}>
+        <div className={'container mx-auto relative h-6 mb-2'}>
             <div className={'absolute -top-4 flex items-center'}>
                 <a href="/mail" className={'flex items-center justify-center mr-6'}>
                     <img src={mailIcon} alt="Arka Mail Icon" className="h-5 mr-2" />
@@ -58,7 +62,42 @@ export default function Mail () {
 
 export function MailOverview() {
     return <>
-        Overview
+        <article className="w-full">
+            <section className="w-full bg-indigo-950 rounded-2xl grid grid-cols-2 mb-12">
+                <div className={'p-12 h-full flex flex-col items-start justify-center'}>
+                    <h1 className={'text-white text-5xl font-medium mb-6'}>{t`Secure email that protects your privacy`}</h1>
+                    <p className={'text-xl text-white font-medium mb-6'}>{t`Keep your conversations private. Proton Mail is an encrypted email service based in Switzerland.`}</p>
+                    <a href="/mail/pricing" className="group py-3 pr-8 bg-gradient-to-r from-violet-400 to-violet-600 text-slate-100 text-xl font-semibold rounded-3xl transition-all duration-200 hover:pr-11 hover:drop-shadow-xl flex items-center justify-center w-fit">
+                        <span className={'pl-8 group-hover:pl-5 transition-all ease-in-out duration-200'}>
+                            {t`Create a free account`}
+                        </span>
+                        <span className="opacity-0 absolute right-4 top-3.5 group-hover:opacity-100 transition-all ease-in-out duration-200">
+                            <BsChevronRight size={26} />
+                        </span>
+                    </a>
+                    <p>{t``}</p>
+                </div>
+                <div className={'flex items-center justify-end'}>
+                    <img src={mOverviewHero} alt="Arka Mail Overview" className={"w-full rounded-br-2xl"}/>
+                </div>
+            </section>
+            <section className={'py-12'}>
+                <div className={'grid grid-cols-2'}>
+                    <div>
+                        <img src={mOverviewEncryption} alt=""/>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article className="w-full">
+
+        </article>
+        <article className="w-full">
+
+        </article>
     </>
 }
 
