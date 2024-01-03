@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import {selectPage, selectRoute} from "../features/router/routerSlice";
 import Routes, { RouteComponent } from "../constants/Routes.constants";
-import {selectLanguage} from "../features/language/languageSlice";
+import {selectLanguage} from "../../src/features/language/languageSlice";
 
 export default function Router() {
     // subscribe to language change

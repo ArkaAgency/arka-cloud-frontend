@@ -1,20 +1,20 @@
 import {Component} from "react";
-import banner from "../assets/ArkaBanner.png";
-import mailIcon from "../assets/mail.png";
-import calendarIcon from "../assets/calendar.png";
-import driveIcon from "../assets/drive.png";
-import vpnIcon from "../assets/vpn.png";
-import {LanguageDropdownAlt} from "../components/LanguageDropdown";
+import banner from "../../../../public/assets/ArkaBanner.png";
+import mailIcon from "../../../../public/assets/mail.png";
+import calendarIcon from "../../../../public/assets/calendar.png";
+import driveIcon from "../../../../public/assets/drive.png";
+import vpnIcon from "../../../../public/assets/vpn.png";
+import {LanguageDropdownAlt} from "../../../../components/legacy/LanguageDropdown";
 import { GoPersonFill, GoKey } from "react-icons/go";
-import packageJson from "../../package.json";
-import t from "../utils/i18n";
+import packageJson from "../../../../package.json";
+import t from "../../../../lib/i18n";
 
 export default class SignIn extends Component {
     render() {
         return <>
             <div className={"w-full h-screen bg-gradient-to-r from-violet-100 to-white"}>
                 <header className={'p-4 px-8 flex items-center justify-between mb-6'}>
-                    <a href="/home">
+                    <a href="/src/views/Home">
                         <img src={banner} alt="Arka Banner" className={"h-12"}/>
                     </a>
                     <LanguageDropdownAlt />
@@ -49,7 +49,7 @@ export default class SignIn extends Component {
                                 <button className={'rounded-xl bg-indigo-600 font-medium text-base text-center w-full text-white p-3 hover:bg-indigo-700'}>{t`Sign in`}</button>
                             </form>
                             <div className={'flex w-full items-center justify-center flex-wrap'}>
-                                <p className={'text-center text-sm text-slate-700'}>New to Arka ? <a href="/signup" className={"text-indigo-600 underline"}>{t`Create account`}</a></p>
+                                <p className={'text-center text-sm text-slate-700'}>New to Arka ? <a href="/src/features/layout/auth/SignUp" className={"text-indigo-600 underline"}>{t`Create account`}</a></p>
                                 <div className={'w-full h-[1px] bg-gray-300 my-5'}></div>
                                 <button className={'group text-sm text-indigo-600 underline cursor-pointer relative'}>
                                     {t`Trouble signing in?`}
@@ -67,16 +67,16 @@ export default class SignIn extends Component {
                         <section>
                             <ul className={'w-full flex items-center justify-center mb-8'}>
                                 <li className={'mr-11'}>
-                                    <img src={mailIcon} alt="Arka Mail Icon" className={'h-9'}/>
+                                    <img src={mailIcon} alt="Arka Page Icon" className={'h-9'}/>
                                 </li>
                                 <li className={'mr-11'}>
-                                    <img src={calendarIcon} alt="Arka Mail Icon" className={'h-9'}/>
+                                    <img src={calendarIcon} alt="Arka Page Icon" className={'h-9'}/>
                                 </li>
                                 <li className={'mr-11'}>
-                                    <img src={driveIcon} alt="Arka Mail Icon" className={'h-9'}/>
+                                    <img src={driveIcon} alt="Arka Page Icon" className={'h-9'}/>
                                 </li>
                                 <li>
-                                    <img src={vpnIcon} alt="Arka Mail Icon" className={'h-9'}/>
+                                    <img src={vpnIcon} alt="Arka Page Icon" className={'h-9'}/>
                                 </li>
                             </ul>
                             <p className={'text-center text-base mb-4'}>

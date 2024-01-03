@@ -1,9 +1,9 @@
-import banner from "../assets/ArkaBanner.png";
+import banner from "../../../public/assets/ArkaBanner.png";
 import { BsTwitterX, BsInstagram, BsGlobeEuropeAfrica } from "react-icons/bs";
-import LanguageDropdown from "./LanguageDropdown";
-import t from "../utils/i18n";
+import LanguageDropdown from "../../../components/legacy/LanguageDropdown";
+import t from "../../../lib/i18n";
 
-export default function Footer() {
+export const Footer = () => {
     return <>
         <footer className="bg-gray-200 py-20">
             <div className={'container mx-auto'}>

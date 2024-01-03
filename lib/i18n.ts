@@ -1,6 +1,6 @@
-import {selectLanguage} from "../features/language/languageSlice";
+import {selectLanguage} from "../src/features/language/languageSlice";
 import store from "./store";
-import french from "./translations/french.translations.json";
+import french from "../src/features/language/french.translations.json";
 
 export default function i18n(message) {
     const language = selectLanguage(store.getState());

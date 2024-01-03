@@ -1,7 +1,7 @@
 import { HiOutlineGlobeEuropeAfrica, HiChevronDown } from "react-icons/hi2";
 import { BsCheck} from "react-icons/bs";
 import {useDispatch, useSelector} from "react-redux";
-import {selectLanguage, setLanguage} from "../features/language/languageSlice";
+import {selectLanguage, setLanguage} from "../../src/features/language/languageSlice";
 
 export default function LanguageDropdown() {
     const dispatch = useDispatch();

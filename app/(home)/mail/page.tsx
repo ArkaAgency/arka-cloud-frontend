@@ -1,10 +1,10 @@
 import {useSelector} from "react-redux";
 import {selectRouteArgs} from "../features/router/routerSlice";
-import BasePageModel from "../components/BasePageModel";
-import t from "../utils/i18n";
-import mailIcon from "../assets/mail.png";
-import mOverviewHero from "../assets/mail_-Hero-desktop-mail.png";
-import mOverviewEncryption from "../assets/mail_end-to-end-encryption.png";
+import BasePageModel from "../../../components/legacy/BasePageModel";
+import t from "../../../lib/i18n";
+import mailIcon from "../../../public/assets/mail.png";
+import mOverviewHero from "../../../public/assets/mail_-Hero-desktop-mail.png";
+import mOverviewEncryption from "../../../public/assets/mail_end-to-end-encryption.png";
 import {BsChevronRight} from "react-icons/bs";
 
 export default function Mail () {
@@ -19,14 +19,14 @@ export default function Mail () {
     return <BasePageModel>
         <div className={'container mx-auto relative h-6 mb-2'}>
             <div className={'absolute -top-4 flex items-center'}>
-                <a href="/mail" className={'flex items-center justify-center mr-6'}>
+                <a href="/app/(home)/mail/Mail" className={'flex items-center justify-center mr-6'}>
                     <img src={mailIcon} alt="Arka Mail Icon" className="h-5 mr-2" />
                     <p className={'text-lg font-bold'}>Arka <span className={'text-violet-500'}>Mail</span></p>
                 </a>
                 <nav>
                     <ul className={'flex items-center'}>
                         <li className={'relative mr-5 h-5'}>
-                            <a href="/mail" className={'font-semibold hover:text-purple-500' + (subpage === 'overview' ? ' text-purple-500 after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-[1px] after:w-full after:bg-current' : '')}>
+                            <a href="/app/(home)/mail/Mail" className={'font-semibold hover:text-purple-500' + (subpage === 'overview' ? ' text-purple-500 after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-[1px] after:w-full after:bg-current' : '')}>
                                 Overview
                             </a>
                         </li>

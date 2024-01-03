@@ -1,5 +1,5 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../../src/features/layout/Header";
+import Footer from "../../src/features/layout/Footer";
 
 export default function BasePageModel({ children }) {
     return <>

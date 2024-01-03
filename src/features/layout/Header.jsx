@@ -1,12 +1,12 @@
-import icon from "../assets/Arka.png";
-import mailIcon from "../assets/mail.png";
-import calendarIcon from "../assets/calendar.png";
-import driveIcon from "../assets/drive.png";
-import vpnIcon from "../assets/vpn.png";
+import icon from "../../../public/assets/Arka.png";
+import mailIcon from "../../../public/assets/mail.png";
+import calendarIcon from "../../../public/assets/calendar.png";
+import driveIcon from "../../../public/assets/drive.png";
+import vpnIcon from "../../../public/assets/vpn.png";
 import { BsChevronRight, BsChevronDown } from "react-icons/bs";
-import t from "../utils/i18n";
+import t from "../../../lib/i18n";
 
-export default function Header() {
+export const Header = () => {
     return <>
         <header className="container mx-auto flex items-center py-3 mb-6">
             <a href="/home">
@@ -25,11 +25,11 @@ export default function Header() {
                                     <a href="/mail" className="p-3 py-4 flex flex-row hover:bg-slate-100 rounded-lg cursor-pointer w-full">
                                         <div className="w-16 h-auto mr-4">
                                             <div className="aspect-square bg-white rounded-lg drop-shadow-lg p-3 w-full">
-                                                <img src={mailIcon} alt="Arka Mail Icon" className="w-12" />
+                                                <img src={mailIcon} alt="Arka Page Icon" className="w-12" />
                                             </div>
                                         </div>
                                         <div>
-                                            <h2 className="text-2xl font-medium">Arka <span className="text-purple-600">Mail</span></h2>
+                                            <h2 className="text-2xl font-medium">Arka <span className="text-purple-600">Page</span></h2>
                                             <p className="text-base font-normal text-slate-500">{t`Encrypted email that's private by default.`}</p>
                                         </div>
                                     </a>
